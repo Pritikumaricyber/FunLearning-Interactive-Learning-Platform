@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Color Wheel + Crayon Parade</title>
+  <link rel="stylesheet" href="color.css">
+</head>
+<body onclick="handleClick()">
+
+  <!-- Intro Screen -->
+  <div id="introScreen">
+    <div class="rotating-wheel">
+      <img src="c_wheel.png" alt="Color Wheel" />
+    </div>
+    <h2>Click to begin!</h2>
+  </div>
+
+  <!-- One-by-One Crayon Parade -->
+  <div id="mainContent">
+    <div id="crayonContainer"></div>
+    <div id="nameTag"></div>
+  </div>
+
+  <!-- Full Parade Page -->
+  <div id="fullParade">
+    <h2>Meet your Color Friends!</h2>
+    <br><br><br><br>
+    <div id="crayonContainerFull"></div>
+  </div>
+
+  <script src="color.js"></script>
+</body>
+</html>

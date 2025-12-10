@@ -1,0 +1,369 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: radial-gradient(circle, #000010, #000);
+  color: white;
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+}
+
+h1 {
+  margin-top: 20px;
+  font-size: 2em;
+}
+
+.solar-system {
+  position: relative;
+  width: 600px;
+  height: 600px;
+  margin-top: 10px;  /* reduced top margin */
+  margin-bottom: 20px; /* ensures space for the fact box */
+  transform: translateY(-40px); /* shifts it upward */
+  z-index: 1; 
+}
+
+.sun {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80px;
+  height: 80px;
+  margin-left: -40px;
+  margin-top: -40px;
+  background: radial-gradient(circle, #ffcc00, #ff6600);
+  border-radius: 50%;
+  box-shadow: 0 0 30px 10px #ff8800;
+  z-index: 5;
+}
+
+.orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scaleX(1.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  overflow: visible;
+}
+
+/* Set size and animation inside orbit-inner */
+.orbit-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  animation: rotateOrbit linear infinite;
+  transform-origin: center center;
+}
+
+.mercury-orbit  { width: 100px; height: 100px; }
+.venus-orbit    { width: 140px; height: 140px; }
+.earth-orbit    { width: 180px; height: 180px; }
+.mars-orbit     { width: 220px; height: 220px; }
+.jupiter-orbit  { width: 270px; height: 270px; }
+.saturn-orbit   { width: 320px; height: 320px; }
+.uranus-orbit   { width: 370px; height: 370px; }
+.neptune-orbit  { width: 420px; height: 420px; }
+
+.mercury-orbit .orbit-inner { animation-duration: 10s; }
+.venus-orbit .orbit-inner   { animation-duration: 14s; }
+.earth-orbit .orbit-inner   { animation-duration: 18s; }
+.mars-orbit .orbit-inner    { animation-duration: 22s; }
+.jupiter-orbit .orbit-inner { animation-duration: 26s; }
+.saturn-orbit .orbit-inner  { animation-duration: 30s; }
+.uranus-orbit .orbit-inner  { animation-duration: 35s; }
+.neptune-orbit .orbit-inner { animation-duration: 40s; }
+
+@keyframes rotateOrbit {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.planet {
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 8px #fff;
+  transition: transform 0.3s;
+  z-index: 10;
+}
+
+.planet:hover {
+  transform: translate(-50%, -50%) scale(1.2);
+  box-shadow: 0 0 12px white;
+}
+
+.mercury { width: 10px; height: 10px; background: #aaa; }
+.venus   { width: 14px; height: 14px; background: #e6c47b; }
+.earth   { width: 16px; height: 16px; background: #4a90e2; }
+.mars    { width: 12px; height: 12px; background: #d14d3f; }
+.jupiter { width: 30px; height: 30px; background: #e0c098; }
+.saturn  { width: 26px; height: 26px; background: #f5d07d; }
+.uranus  { width: 20px; height: 20px; background: #82e0ff; }
+.neptune { width: 20px; height: 20px; background: #4b70dd; }
+
+.fact-box {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.1);
+  padding: 12px 25px;
+  border-left: 4px solid #00c2ff;
+  border-radius: 8px;
+  font-size: 1rem;
+  line-height: 1.5;
+  text-align: center;
+  color: #fff;
+  box-shadow: 0 0 10px #000;
+  max-width: 90%;
+  z-index: 999;
+}
+
+
+.orbit {
+  pointer-events: none;
+}
+
+.orbit-inner {
+  pointer-events: none;
+}
+
+.planet {
+  pointer-events: auto;
+  z-index: 10;
+}
+
+/* Full-screen starry background */
+.stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* Generate lots of stars with box-shadow magic */
+.stars::before {
+  content: '';
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  background: transparent;
+  box-shadow:
+    10px 20px white,
+    30px 50px white,
+    70px 90px white,
+    100px 150px white,
+    120px 300px white,
+    150px 100px white,
+    170px 200px white,
+    200px 400px white,
+    250px 220px white,
+    280px 100px white,
+    300px 300px white,
+    350px 50px white,
+    400px 380px white,
+    450px 200px white,
+    500px 100px white,
+    550px 250px white,
+    600px 300px white,
+    650px 120px white,
+    700px 350px white,
+    750px 180px white,
+    800px 280px white,
+    850px 60px white,
+    900px 300px white,
+    950px 150px white,
+    1000px 240px white,
+    1050px 70px white,
+    1100px 330px white,
+    1150px 90px white,
+    1200px 180px white,
+    1250px 400px white,
+130px 420px white,
+160px 440px white,
+190px 460px white,
+220px 440px white,
+270px 420px white,
+310px 490px white,
+340px 530px white,
+370px 510px white,
+390px 500px white,
+430px 600px white,
+470px 550px white,
+490px 580px white,
+530px 590px white,
+570px 410px white,
+610px 540px white,
+670px 720px white,
+710px 670px white,
+730px 690px white,
+780px 400px white,
+830px 450px white,
+870px 460px white,
+920px 530px white,
+960px 530px white,
+990px 600px white,
+1030px 660px white,
+1070px 620px white,
+1120px 580px white,
+1170px 460px white,
+1220px 410px white,
+1270px 440px white,
+1320px 20px white,
+1360px 40px white,
+1400px 60px white,
+1440px 80px white,
+1440px 80px white,
+1480px 100px white,
+1520px 120px white,
+1560px 140px white,
+1350px 30px white,
+1390px 70px white,
+1430px 110px white,
+1470px 150px white,
+1510px 170px white,
+1490px 60px white,
+20px 620px white,
+60px 640px white,
+100px 660px white,
+140px 680px white,
+180px 700px white,
+30px 670px white,
+70px 650px white,
+110px 630px white,
+270px 680px white,
+290px 700px white;
+
+  animation: twinkle 5s infinite ease-in-out;
+}
+
+/* More twinkling stars in a second layer */
+.stars::after {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: transparent;
+  box-shadow:
+    20px 80px white,
+    60px 220px white,
+    100px 340px white,
+    140px 120px white,
+    180px 60px white,
+    220px 260px white,
+    260px 180px white,
+    300px 400px white,
+    360px 40px white,
+    400px 320px white,
+    440px 160px white,
+    480px 240px white,
+    520px 100px white,
+    560px 200px white,
+    600px 360px white,
+    640px 80px white,
+    680px 260px white,
+    720px 140px white,
+    760px 320px white,
+    800px 100px white,
+    840px 400px white,
+    880px 200px white,
+    920px 300px white,
+    960px 160px white,
+    1000px 100px white,
+    1040px 180px white,
+    1080px 250px white,
+    1120px 60px white,
+    1160px 280px white,
+    1200px 200px white,
+50px 320px white,
+90px 360px white,
+130px 400px white,
+170px 310px white,
+210px 450px white,
+250px 490px white,
+290px 530px white,
+330px 370px white,
+370px 610px white,
+410px 650px white,
+450px 430px white,
+490px 470px white,
+530px 520px white,
+570px 580px white,
+610px 600px white,
+650px 390px white,
+690px 340px white,
+730px 620px white,
+770px 680px white,
+810px 550px white,
+850px 430px white,
+890px 370px white,
+930px 490px white,
+970px 520px white,
+1010px 580px white,
+1050px 620px white,
+1090px 330px white,
+1130px 390px white,
+1170px 470px white,
+1210px 500px white,
+1250px 610px white,
+1290px 640px white,
+1330px 420px white,
+1370px 380px white,
+1410px 550px white,
+1450px 590px white,
+1490px 630px white,
+1530px 460px white,
+1570px 510px white,
+1610px 540px white,
+1650px 670px white,
+1690px 690px white,
+1730px 330px white,
+1770px 350px white,
+1810px 400px white,
+1850px 430px white,
+1890px 470px white,
+1930px 500px white,
+1970px 550px white,
+2010px 580px white,
+1480px 100px white,
+1520px 120px white,
+1560px 140px white,
+1600px 160px white,
+1330px 130px white,
+1370px 170px white,
+1410px 190px white,
+1450px 30px white,
+220px 720px white,
+260px 740px white,
+80px 690px white,
+40px 710px white,
+10px 730px white,
+150px 610px white,
+190px 600px white,
+230px 660px white,
+250px 720px white,
+200px 740px white;
+
+  animation: twinkle 7s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 1; }
+}
+
+@keyframes drift {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(10px); }
+}

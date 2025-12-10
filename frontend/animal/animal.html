@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Animal Fun – Learn & Play</title>
+  <link rel="stylesheet" href="animal.css">
+</head>
+<body>
+  <header>
+    <div class="wrap hero" role="banner">
+      <div>
+        <h1>🐾 Animal&nbsp;Fun</h1>
+        <p>Select a section to explore animals!</p>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div id="sections" class="sections">
+      <div class="section" data-kind="farm"><div class="emoji">🐮</div>Farm Animals</div>
+      <div class="section" data-kind="wild"><div class="emoji">🦁</div>Wild Animals</div>
+      <div class="section" data-kind="bird"><div class="emoji">🦉</div>Birds</div>
+      <div class="section" data-kind="water"><div class="emoji">🐬</div>Water Animals</div>
+    </div>
+
+    <div id="animalPage" style="display:none; max-width:900px; width:100%;">
+      <button class="backBtn" onclick="showSections()">⬅ Back</button>
+      <div id="animalGrid" class="grid"></div>
+    </div>
+  </main>
+
+  <script src="animal.js"></script>
+</body>
+</html>

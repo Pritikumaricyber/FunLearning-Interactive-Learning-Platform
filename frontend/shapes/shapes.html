@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Scattering Equal Shapes</title>
+  <link rel="stylesheet" href="shapes.css" />
+</head>
+<body>
+  <h1 id="title">SHAPES</h1>
+  <svg viewBox="0 0 400 320" id="scene" aria-labelledby="title desc" role="img">
+    <!-- Original house parts -->
+    <g class="house-part">
+      <line x1="30" y1="300" x2="360" y2="300" stroke="var(--stroke)" stroke-width="var(--stroke-width)" stroke-linecap="round" />
+      <rect x="100" y="150" width="200" height="150" rx="10" ry="10" fill="none" stroke="var(--stroke)" stroke-width="var(--stroke-width)"/>
+      <polygon points="100,150 200,80 300,150" fill="none" stroke="var(--stroke)" stroke-width="var(--stroke-width)" stroke-linejoin="round"/>
+      <rect x="255" y="95" width="24" height="48" fill="none" stroke="var(--stroke)" stroke-width="var(--stroke-width)"/>
+      <rect x="180" y="230" width="40" height="70" rx="4" ry="4" fill="none" stroke="var(--stroke)" stroke-width="var(--stroke-width)"/>
+      <circle cx="214" cy="265" r="3.5" fill="none" stroke="var(--stroke)" stroke-width="var(--stroke-width)"/>
+      <rect x="120" y="180" width="40" height="40" rx="3" ry="3" fill="none" stroke="var(--stroke)" stroke-width="var(--stroke-width)"/>
+      <line x1="120" y1="200" x2="160" y2="200" stroke="var(--stroke)" stroke-width="2"/>
+      <line x1="140" y1="180" x2="140" y2="220" stroke="var(--stroke)" stroke-width="2"/>
+      <rect x="240" y="180" width="40" height="40" rx="3" ry="3" fill="none" stroke="var(--stroke)" stroke-width="var(--stroke-width)"/>
+      <line x1="240" y1="200" x2="280" y2="200" stroke="var(--stroke)" stroke-width="2"/>
+      <line x1="260" y1="180" x2="260" y2="220" stroke="var(--stroke)" stroke-width="2"/>
+      <line x1="200" y1="80" x2="200" y2="90" stroke="var(--stroke)" stroke-width="2"/>
+      <path class="smoke" d="M 267 90 q 10 -12 22 0" fill="none" stroke="var(--stroke)" stroke-width="2" stroke-linecap="round" stroke-dasharray="6 6" />
+      <path class="smoke" d="M 276 72 q 10 -10 22 2" fill="none" stroke="var(--stroke)" stroke-width="2" stroke-linecap="round" stroke-dasharray="6 6" style="animation-delay:.3s" />
+      <path class="smoke" d="M 285 56 q 9 -10 20 4" fill="none" stroke="var(--stroke)" stroke-width="2" stroke-linecap="round" stroke-dasharray="6 6" style="animation-delay:.6s" />
+      <rect x="50" y="240" width="40" height="60" fill="none" stroke="var(--stroke)" stroke-width="var(--stroke-width)"/>
+      <path d="M45,240 a25,50 0 0,1 50,0" fill="none" stroke="var(--stroke)" stroke-width="var(--stroke-width)" />
+    </g>
+
+    <!-- Scattered shapes -->
+    <g class="shape line">
+      <line x1="170" y1="160" x2="230" y2="160" stroke="#e63946" stroke-width="4" stroke-linecap="round" />
+    </g>
+    <g class="shape square">
+      <rect x="170" y="130" width="60" height="60" fill="none" stroke="#457b9d" stroke-width="4" />
+    </g>
+    <g class="shape circle">
+      <circle cx="200" cy="160" r="30" fill="none" stroke="#2a9d8f" stroke-width="4" />
+    </g>
+    <g class="shape rect">
+      <rect x="160" y="180" width="80" height="40" fill="none" stroke="#f4a261" stroke-width="4" />
+    </g>
+    <g class="shape semi">
+      <path d="M160,220 a40,40 0 0,1 80,0" fill="none" stroke="#e9c46a" stroke-width="4" />
+    </g>
+
+    <!-- Labels -->
+    <text class="label line-label" x="60" y="180">Line</text>
+    <text class="label square-label" x="200" y="180">Square</text>
+    <text class="label circle-label" x="340" y="180">Circle</text>
+    <text class="label rect-label" x="118" y="300">Rectangle</text>
+    <text class="label semi-label" x="278" y="300">Semicircle</text>
+  </svg>
+
+  <script src="shapes.js"></script>
+</body>
+</html>

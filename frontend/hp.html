@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fun Learning</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #faf1f1;
+      color: #2e7d32;
+      overflow-x: hidden;
+      position: relative;
+      padding: 100px 20px;
+    }
+
+    /* Background illustrations */
+    .bg-image {
+      position: absolute;
+      z-index: 0;
+      opacity: 1;
+    }
+
+    .bg-rainbow {
+      top: 20px;
+      left: 00px;
+      width: 500px;
+    }
+
+    .bg-bear {
+
+      top: 390px;
+      left: 00px;
+      width: 250px;
+    }
+
+    .bg-plane {
+      top: 290px;
+      right: 180px;
+      width: 310px;
+    }
+
+    .bg-pencil {
+      top: 380px;
+      right: 00px;
+      width: 260px;
+    }
+    .bg-spiral{
+       top: 30px;
+      right: 00px;
+      width: 260px;
+    }
+
+    /* Main content */
+    .container {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .logo {
+      margin-bottom: 30px;
+      right:120px;
+    }
+
+    .logo img {
+      
+      width: 100%;
+       height: 100%; 
+       max-width: 550px; 
+       max-height: 550px;
+    }
+
+    h1 {
+      font-size: 3em;
+      font-weight: 700;
+      margin: 0;
+      letter-spacing: 2px;
+      color: #2e7d32;
+    }
+
+.slogan {
+  font-size: clamp(2em, 6vw, 4em); /* Responsive font size */
+  font-weight: 600;
+  margin: 30px 0 10px;
+  color: #2e7d32;
+  white-space: nowrap; /* Prevent line breaks */
+  letter-spacing: 2px;  /* Optional: adds breathing room */
+}
+
+    .slogan span {
+      margin: 0 10px;
+      color: #66bb6a;
+    }
+
+    .subheading {
+      font-size: 1.2em;
+      font-weight: 500;
+      color: #66bb6a;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    .puzzle-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 2rem;
+}
+
+.puzzle-piece {
+  width: 400px;
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 20% 20% 20% 20%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.puzzle-piece img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.feature-section {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 60px;
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.feature-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 300px;
+}
+.feature-icon {
+  width: 60px;
+  margin-bottom: 15px;
+}
+
+.feature-item h3 {
+  color: #2e7d32;
+  font-size: 1.4em;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.feature-item p {
+  color: #4caf50;
+  font-size: 1em;
+  line-height: 1.5;
+}
+.feature-icon {
+  margin-bottom: 15px;
+}
+
+/* Individual icon sizing */
+.book-icon {
+  width: 400px;
+  height: auto;
+}
+
+.owl-icon {
+  width: 400px;
+  height: auto;
+}
+
+.house-icon {
+  width: 400px;
+  height: auto;
+}
+.nurture-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4rem 2rem;
+  background-color: #c8e6c9;
+  border-radius: 30px;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.nurture-text {
+  flex: 1;
+  min-width: 280px;
+  max-width: 500px;
+  color: #2e7d32;
+  margin-left: 100px; 
+
+}
+
+.nurture-text h2 {
+  font-size: 3em;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.nurture-text p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  color: #388e3c;
+}
+
+.cta-button {
+  background-color: #66bb6a;
+  color: white;
+  font-size: 1em;
+  font-weight: 600;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #4caf50;
+}
+
+.nurture-image {
+  flex: 1;
+  min-width: 280px;
+  max-width: 500px;
+  text-align: center;
+}
+
+.nurture-image img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+.nowrap {
+  white-space: nowrap;
+}
+.site-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f5f5dc; /* Light beige */
+  border-top: 4px solid #2e7d32; /* Dark green border */
+  padding: 2rem;
+  flex-wrap: wrap;
+  font-size: 1em;
+  color: #2e7d32;
+}
+
+.footer-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-logo img {
+  width: 60px;
+  margin-bottom: 8px;
+}
+
+.footer-logo p {
+  font-weight: 700;
+  margin: 0;
+}
+
+.footer-copy {
+  text-align: center;
+  flex: 1;
+}
+
+.footer-social {
+  display: flex;
+  gap: 15px;
+}
+
+.footer-social img {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s ease;
+}
+
+.footer-social img:hover {
+  transform: scale(1.1);
+}
+
+.footer-social a {
+  color: #2e7d32;
+  font-size: 1.8em;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footer-social a:hover {
+  transform: scale(1.2);
+  color: #66bb6a;
+}
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.site-footer {
+  margin-top: auto;
+}
+  </style>
+</head>
+<body>
+  <div class="page-wrapper">
+
+
+  <!-- Background images (replace src with your actual image paths) -->
+  <img src="photos/rainbow.png" alt="Rainbow" class="bg-image bg-rainbow" />
+  <img src="photos/teddy.png" alt="Teddy Bear" class="bg-image bg-bear" />
+  <img src="photos/plane.png" alt="Paper Airplane" class="bg-image bg-plane" />
+  <img src="photos/pencil.png" alt="Pencil" class="bg-image bg-pencil" />
+  <img src="photos/spiral.png" alt="spiral" class="bg-image bg-spiral" />
+
+  <!-- Main content -->
+  <div class="container">
+    <div class="logo">
+      <img src="photos/logo.png" alt="Fun Learning Logo" />
+    </div>
+    <br>
+    <div class="slogan">
+      Learn <span>◦</span> Grow <span>◦</span> Thrive
+    </div>
+
+    <div class="subheading">
+      A personalized learning journey for every child.
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div class="puzzle-container">
+  <div class="puzzle-piece left">
+    <img src="photos/child_reading.png" alt="Child reading">
+  </div>
+  <div class="puzzle-piece center">
+    <img src="photos/puzzle.png" alt="Creative play">
+  </div>
+  <div class="puzzle-piece right">
+    <img src="photos/mom_child.png" alt="Guided learning">
+  </div>
+</div>
+<div class="feature-section">
+  <div class="feature-item">
+    <img src="photos/book.png" alt="Open Book Icon" class="feature-icon book-icon" />
+    <h3>Explore Fun Learning</h3>
+    <p>Engaging lessons on science, shapes, and more to spark your child's curiosity.</p>
+  </div>
+
+  <div class="feature-item">
+    <img src="photos/owl.png" alt="Owl Icon" class="feature-icon owl-icon" />
+    <h3>Learn at Your Own Pace</h3>
+    <p>Interactive activities that let your child learn concepts step by step.</p>
+  </div>
+
+  <div class="feature-item">
+    <img src="photos/house.png" alt="Building Icon" class="feature-icon house-icon" />
+    <h3>Quizzes & Games</h3>
+    <p>Fun quizzes and games to reinforce learning and make education exciting.</p>
+  </div>
+</div>
+<div class="nurture-section">
+  <div class="nurture-text">
+   <h2><span class="nowrap">Nurturing Young Minds</span></h2><br>
+    <p>This website is designed to make learning fun and interactive for children, helping them explore basic concepts through engaging lessons and quizzes.</p>
+   <a href="registration.html">
+  <button class="cta-button">Register Now</button>
+</a>
+  </div>
+  <div class="nurture-image">
+    <img src="photos/child_smiling.png" alt="Child" />
+  </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<footer class="site-footer">
+  <div class="footer-logo">
+    <img src="photos/logo.png" alt="Fun Learning Logo" />
+    <p>FUN LEARNING</p>
+  </div>
+
+  <div class="footer-copy">
+    © 2025. All Rights Reserved.
+  </div>
+  <div class="footer-social">
+  <a href="#"><i class="fab fa-facebook-f"></i></a>
+  <a href="#"><i class="fab fa-instagram"></i></a>
+  <a href="#"><i class="fab fa-twitter"></i></a>
+</div>
+  </div>
+</div>
+</footer>
+</body>
+</html>

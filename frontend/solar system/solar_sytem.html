@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Elliptical Orbit Solar System</title>
+  <link rel="stylesheet" href="solar_system.css" />
+</head>
+<body>
+
+  <h1>Solar System</h1>
+   <div class="stars"></div>
+  <div class="solar-system">
+    <div class="sun"></div>
+
+    <!-- Mercury -->
+    <div class="orbit mercury-orbit">
+      <div class="orbit-inner">
+        <div class="planet mercury" onclick="showFact('Mercury')"></div>
+      </div>
+    </div>
+
+    <!-- Venus -->
+    <div class="orbit venus-orbit">
+      <div class="orbit-inner">
+        <div class="planet venus" onclick="showFact('Venus')"></div>
+      </div>
+    </div>
+
+    <!-- Earth -->
+    <div class="orbit earth-orbit">
+      <div class="orbit-inner">
+        <div class="planet earth" onclick="showFact('Earth')"></div>
+      </div>
+    </div>
+
+    <!-- Mars -->
+    <div class="orbit mars-orbit">
+      <div class="orbit-inner">
+        <div class="planet mars" onclick="showFact('Mars')"></div>
+      </div>
+    </div>
+
+    <!-- Jupiter -->
+    <div class="orbit jupiter-orbit">
+      <div class="orbit-inner">
+        <div class="planet jupiter" onclick="showFact('Jupiter')"></div>
+      </div>
+    </div>
+
+    <!-- Saturn -->
+    <div class="orbit saturn-orbit">
+      <div class="orbit-inner">
+        <div class="planet saturn" onclick="showFact('Saturn')"></div>
+      </div>
+    </div>
+
+    <!-- Uranus -->
+    <div class="orbit uranus-orbit">
+      <div class="orbit-inner">
+        <div class="planet uranus" onclick="showFact('Uranus')"></div>
+      </div>
+    </div>
+
+    <!-- Neptune -->
+    <div class="orbit neptune-orbit">
+      <div class="orbit-inner">
+        <div class="planet neptune" onclick="showFact('Neptune')"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div id="factBox" class="fact-box">Click on a planet to learn more!</div>
+
+  <script src="solar_system.js"></script>
+</body>
+</html>

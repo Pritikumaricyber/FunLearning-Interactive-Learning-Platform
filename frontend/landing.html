@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fun Learning</title>
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+   * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  min-height: 100vh;
+  background-color: #f5f5dc; /* beige */
+}
+
+/* Sidebar Navigation */
+nav {
+  width: 220px;
+  background-color: #d2b48c; /* tan */
+  color: #4a4a4a;
+  padding: 20px;
+  box-shadow: 4px 0 8px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+nav h2 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  color: #4a4a4a;
+}
+
+nav a {
+  text-decoration: none;
+  color: #4a4a4a;
+  font-size: 1.1rem;
+  padding: 6px 0;
+  border-left: 4px solid transparent;
+  transition: all 0.3s ease;
+}
+
+nav a:hover {
+  color: #6b4226;
+  border-left: 4px solid #6b4226;
+  background-color: #f5deb3; /* wheat */
+  padding-left: 12px;
+}
+
+/* Main Content Area */
+main {
+  flex: 1;
+  padding: 40px;
+  background-color: #fffaf0; /* floral white */
+  color: #6b4226;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Intro Text Animation */
+.intro-line {
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+  opacity: 0;
+  animation: fadeInUp 1s ease forwards;
+}
+
+.intro-line:nth-child(1) { animation-delay: 0.5s; }
+.intro-line:nth-child(2) { animation-delay: 2s; }
+.intro-line:nth-child(3) { animation-delay: 3.5s; }
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Floating Icons */
+.floating-icons {
+  position: absolute;
+  bottom: 40px;
+  display: flex;
+  gap: 30px;
+  animation: fadeIn 4s ease forwards;
+}
+
+.floating-icons span {
+  font-size: 2rem;
+  opacity: 0.6;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Learning Mode Cards (Horizontal Layout) */
+main h1 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.mode-row {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  max-width: 1000px;
+}
+
+.mode-card {
+  background-color: #f5f5dc;
+  border: 2px solid #d2b48c;
+  border-radius: 15px;
+  padding: 20px;
+  width: 200px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.mode-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  background-color: #f5deb3;
+}
+
+.mode-card span {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 10px;
+}
+.profile-bar {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+}
+
+.profile-btn {
+  background-color: #d2b48c;
+  color: #4a4a4a;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: background-color 0.3s ease;
+}
+
+.profile-btn:hover {
+  background-color: #f5deb3;
+  color: #6b4226;
+}
+.center-title {
+  font-size: 80px;
+  color: #6b4226;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 30px;
+}
+  </style>
+</head>
+<body>
+  <nav>
+    <h2>Explore Topics</h2>
+    <a href="solar system/solar_sytem.html">🌌 Solar System</a>
+    <a href="shapes/shapes.html">🔺 Shapes</a>
+    <a href="color/color.html">🎨 Colors</a>
+    <a href="numbers/numbers.html">🔢 Numbers</a>
+    <a href="animal/animal.html">🐾 Animals</a>
+  </nav>
+
+ 
+   <main>
+     <img src="photos/logo.png" alt="Fun Learning Logo" />
+   <h1 class="center-title">Learn. Play. Grow.</h1>
+   <img src="photos/children.png" alt="children" />
+    <div class="profile-bar">     
+  <button class="profile-btn">
+    <span>👤</span> Profile
+  </button>
+</div>
+  <h1>Choose Your Learning Mode ✨</h1>
+  <div class="mode-row">
+    <div class="mode-card" id="quiz">
+      <span>🧠</span>
+      <h2>Quiz</h2>
+      <p>Test your knowledge with fun questions</p>
+    </div>
+    <div class="mode-card" id="flashcard">
+      <span>📇</span>
+      <h2>Flashcards</h2>
+      <p>Flip and learn with visual cards</p>
+    </div>
+    <div class="mode-card" id="memory">
+      <span>🧩</span>
+      <h2>Memory Match</h2>
+      <p>Find matching pairs and sharpen your memory</p>
+    </div>
+    <div class="mode-card" id="dragdrop">
+      <span>🎯</span>
+      <h2>Drag & Drop</h2>
+      <p>Sort, match, and play with ideas</p>
+    </div>
+  </div>
+</main>
+</body>
+</html>

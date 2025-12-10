@@ -1,0 +1,151 @@
+body {
+  background: #f0f8ff;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Comic Sans MS', cursive;
+  overflow: hidden;
+  cursor: pointer;
+  flex-direction: column;
+}
+
+/* Intro Screen */
+#introScreen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.rotating-wheel {
+  width: 500px;
+  height: 500px;
+  animation: spin 8s linear infinite;
+}
+
+.rotating-wheel img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+h2 {
+  font-size: 1.8rem;
+  color: #444;
+  margin: 0;
+  animation: fadeInText 1s ease forwards;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes fadeInText {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* One-by-One Crayon Parade */
+#mainContent {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+}
+
+#crayonContainer {
+  position: relative;
+  width: 150px;
+  height: 300px;
+}
+
+.crayon {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  animation: fadeIn 0.6s ease forwards;
+}
+
+#nameTag {
+  margin-top: 1rem;
+  font-size: 1.6rem;
+  color: #333;
+  opacity: 0;
+  animation: fadeInText 0.6s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; transform: scale(1); }
+  to { opacity: 0; transform: scale(0.8); }
+}
+
+.fade-out {
+  animation: fadeOut 0.5s ease forwards;
+}
+
+/* Full Parade Page */
+#fullParade {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  height: 100vh;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+#crayonContainerFull {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100%;
+  height: 300px;
+  padding: 1rem;
+  gap: 0.5rem;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.crayon-wrapper {
+  width: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: slideIn 0.6s ease forwards;
+}
+
+.crayon-full {
+  width: 100%;
+  aspect-ratio: 1 / 2;
+}
+
+.name-tag {
+  font-family: 'Comic Sans MS', cursive;
+  font-size: 1rem;
+  color: #333;
+  margin-top: 0.3rem;
+  text-align: center;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-50px) scale(0.8); }
+  to { opacity: 1; transform: translateX(0) scale(1); }
+}
+
+svg {
+  width: 100%;
+  height: 100%;
+}
